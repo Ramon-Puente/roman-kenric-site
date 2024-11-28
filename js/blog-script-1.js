@@ -1474,69 +1474,7 @@
       }
     });
   
-    // packages/shared/render/plugins/BaseSiteModules/webflow-brand.js
-    var require_webflow_brand = __commonJS({
-      "packages/shared/render/plugins/BaseSiteModules/webflow-brand.js"(exports, module) {
-        "use strict";
-        var Webflow = require_webflow_lib();
-        Webflow.define("brand", module.exports = function($) {
-          var api = {};
-          var doc = document;
-          var $html = $("html");
-          var $body = $("body");
-          var namespace = ".w-webflow-badge";
-          var location = window.location;
-          var isPhantom = /PhantomJS/i.test(navigator.userAgent);
-          var fullScreenEvents = "fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange";
-          var brandElement;
-          api.ready = function() {
-            var shouldBrand = $html.attr("data-wf-status");
-            var publishedDomain = $html.attr("data-wf-domain") || "";
-            if (/\.webflow\.io$/i.test(publishedDomain) && location.hostname !== publishedDomain) {
-              shouldBrand = true;
-            }
-            if (shouldBrand && !isPhantom) {
-              brandElement = brandElement || createBadge();
-              ensureBrand();
-              setTimeout(ensureBrand, 500);
-              $(doc).off(fullScreenEvents, onFullScreenChange).on(fullScreenEvents, onFullScreenChange);
-            }
-          };
-          function onFullScreenChange() {
-            var fullScreen = doc.fullScreen || doc.mozFullScreen || doc.webkitIsFullScreen || doc.msFullscreenElement || Boolean(doc.webkitFullscreenElement);
-            $(brandElement).attr("style", fullScreen ? "display: none !important;" : "");
-          }
-          function createBadge() {
-            var $brand = $('<a class="w-webflow-badge"></a>').attr("href", "https://webflow.com?utm_campaign=brandjs");
-            var $logoArt = $("<img>").attr("src", "https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-icon-d2.89e12c322e.svg").attr("alt", "").css({
-              marginRight: "4px",
-              width: "26px"
-            });
-            var $logoText = $("<img>").attr("src", "https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-text-d2.c82cec3b78.svg").attr("alt", "Made in Webflow");
-            $brand.append($logoArt, $logoText);
-            return $brand[0];
-          }
-          function ensureBrand() {
-            var found = $body.children(namespace);
-            var match = found.length && found.get(0) === brandElement;
-            var inEditor = Webflow.env("editor");
-            if (match) {
-              if (inEditor) {
-                found.remove();
-              }
-              return;
-            }
-            if (found.length) {
-              found.remove();
-            }
-            if (!inEditor) {
-              $body.append(brandElement);
-            }
-          }
-          return api;
-        });
-      }
-    });
+
   
     // packages/shared/render/plugins/BaseSiteModules/webflow-edit.js
     var require_webflow_edit = __commonJS({
@@ -12972,18 +12910,7 @@
       }
     });
   
-    // <stdin>
-    require_webflow_brand();
-    require_webflow_edit();
-    require_webflow_focus_visible();
-    require_webflow_focus();
-    require_webflow_ix2_events();
-    require_webflow_ix2();
-    require_webflow_links();
-    require_webflow_scroll();
-    require_webflow_touch();
-    require_webflow_forms();
-    require_webflow_navbar();
+
   })();
   /*!
   * tram.js v0.8.2-global
