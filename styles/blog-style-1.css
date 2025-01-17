@@ -9929,7 +9929,7 @@ html {
   }
   
   .navbar {
-    display: none;
+    display: block;
   }
   
   .navbar-container {
