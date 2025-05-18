@@ -188,20 +188,20 @@
         <div class="w-layout-blockcontainer footer-cont w-container">
             <div class="foot-wrap">
                 <div class="footer-form w-form">
-                    <form id="wf-form-Footer-Form" name="wf-form-Footer-Form" data-name="Footer Form" method="get" class="footer-form-container" data-wf-page-id="6826495316362b6099c7a084" data-wf-element-id="9d3599c5-cd02-124b-ac7d-bb5344956aa4" data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e">
-                        <div class="footer-title">JOIN</div>
-                        <div class="footer-form-block">
-                            <input class="footer-form-field w-input" maxlength="256" name="Footer-Email" data-name="Footer Email" aria-label="Get product updates" placeholder="Email " type="email" id="Footer-Email" required=""/>
-                            <input type="submit" data-wait="Please wait..." class="footer-form-submit w-button" value=""/>
-                        </div>
+                    <form id="wf-form-Footer-Form" name="wf-form-Footer-Form" data-name="Footer Form" onsubmit="return false;" method="" action="" data-wf-ignore="true" class="footer-form-container" data-wf-page-id="6826495316362b6099c7a084" data-wf-element-id="9d3599c5-cd02-124b-ac7d-bb5344956aa4">
+                      <div class="footer-title">JOIN</div>
+                      <div class="footer-form-block">
+                        <input class="footer-form-field w-input" maxlength="256" name="Footer-Email" data-name="Footer Email" aria-label="Get product updates" placeholder="Email " type="email" id="Footer-Email" required=""/>
+                        <input type="submit" data-wait="Please wait..." class="footer-form-submit w-button" value=""/>
+                      </div>
                     </form>
                     <div class="w-form-done">
-                        <div>Thank you! Your submission has been received!</div>
+                      <div>Thank you! Your submission has been received!</div>
                     </div>
                     <div class="w-form-fail">
-                        <div>Oops! Something went wrong while submitting the form.</div>
+                      <div>Oops! Something went wrong while submitting the form.</div>
                     </div>
-                </div>
+                  </div>
                 <script>
                 document.getElementById('wf-form-Footer-Form').addEventListener('submit', function(event) {
                 event.preventDefault();
@@ -217,7 +217,7 @@
                 submitButton.value = submitButton.getAttribute('data-wait');
 
                 // Replace with your Cloudflare Worker URL
-                const workerUrl = 'mailerlite-subscribe.romankenric.workers.dev';
+                const workerUrl = 'https://mailerlite-subscribe.romankenric.workers.dev';
 
                 // Send request to Cloudflare Worker
                 fetch(workerUrl, {
