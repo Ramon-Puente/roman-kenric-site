@@ -48,7 +48,6 @@
   --font-size-xl: 18px;
   --font-size-2xl: 20px;
   --font-size-3xl: 24px;
-  --font-size-4xl: 30px;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 550;
@@ -779,11 +778,16 @@ body {
   max-width: 400px;
 }
 
-/* This rule specifically targets the MailerLite success message heading
-   to ensure its color matches your site's general text color. */
+/* Force all text within MailerLite success messages to use the primary text color */
+.ml-embedded .ml-form-successBody *,
+.ml-embedded .ml-form-success * {
+  color: #F0EDE5 !important; /* Changed to specific hex color */
+}
+
+/* Explicitly target the h4 within MailerLite success messages for color */
 .ml-embedded .ml-form-successBody h4,
 .ml-embedded .ml-form-success h4 {
-  color: var(--color-text) !important; /* Force the heading color to site's text color */
+  color: #F0EDE5 !important; /* Changed to specific hex color */
 }
 
 /* Disclaimer */
