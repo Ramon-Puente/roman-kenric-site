@@ -1018,3 +1018,67 @@ body {
     margin-bottom: var(--space-24);
   }
 }
+/* Override MailerLite styles */
+.ml-embedded .ml-form {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ml-embedded input[type="email"] {
+  padding: var(--space-12) var(--space-16) !important;
+  border: 2px solid var(--color-border) !important;
+  border-radius: var(--radius-base) !important;
+  font-size: var(--font-size-base) !important;
+  background: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  transition: all var(--duration-normal) var(--ease-standard) !important;
+  width: 100% !important;
+  margin-bottom: var(--space-16) !important;
+}
+
+.ml-embedded input[type="email"]:focus {
+  border-color: var(--color-primary) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(181, 71, 69, 0.2) !important;
+}
+
+.ml-embedded button[type="submit"] {
+  background: var(--color-primary) !important;
+  color: white !important;
+  border: none !important;
+  padding: var(--space-12) var(--space-24) !important;
+  border-radius: var(--radius-base) !important;
+  font-weight: var(--font-weight-medium) !important;
+  font-size: var(--font-size-base) !important;
+  cursor: pointer !important;
+  transition: all var(--duration-normal) var(--ease-standard) !important;
+  width: 100% !important;
+}
+
+.ml-embedded button[type="submit"]:hover {
+  background: var(--color-primary-hover) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 16px rgba(181, 71, 69, 0.3) !important;
+}
+
+/* Enhanced MailerLite success message styling */
+.ml-embedded .ml-form-successBody,
+.ml-embedded .ml-form-success {
+  background: rgba(33, 128, 141, 0.1) !important;
+  border: 2px solid var(--brand-sage) !important;
+  border-radius: var(--radius-base) !important;
+  padding: var(--space-16) !important;
+  margin: var(--space-16) 0 !important;
+  color: var(--color-text) !important;
+  font-size: var(--font-size-base) !important;
+  text-align: center !important;
+  box-shadow: 0 4px 12px rgba(77, 100, 86, 0.2) !important;
+}
+
+.ml-embedded .ml-form-successBody h4,
+.ml-embedded .ml-form-success h4 {
+  color: var(--brand-sage) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  margin-bottom: var(--space-8) !important;
+}
